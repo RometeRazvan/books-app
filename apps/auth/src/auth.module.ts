@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { RmqModule, DatabaseModule } from '@app/common';
+import { RmqModule, DatabaseModule, KafkaModule } from '@app/common';
 import * as Joi from 'joi';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
@@ -32,8 +32,9 @@ import { UsersModule } from './users/users.module';
       }),
       inject: [ConfigService],
     }),
+    KafkaModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, LocalStrategy, JwtStrategy],
 })
-export class AuthModule {}
+export class AuthModule { }

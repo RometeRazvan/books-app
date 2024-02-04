@@ -5,3 +5,6 @@ export * from './rmq/rmq.service';
 export * from './rmq/rmq.module';
 export * from './auth/auth.module';
 export * from './auth/jwt-auth.guard';
+export * from './kafka/kafka.module';
+export * from './kafka/producer.service';
+export * from './kafka/consumer.service';
