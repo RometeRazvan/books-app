@@ -21,11 +21,10 @@ export class AuthController {
     response.send(user);
   }
 
-  @UseGuards(LocalAuthGuard)
   @Post('logout')
   async logout(@Res({ passthrough: true }) response: Response) {
     this.authService.logout(response);
-    response.send('Logged out');
+    response.send();
   }
 
   @UseGuards(JwtAuthGuard)
